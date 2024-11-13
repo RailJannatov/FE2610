@@ -1,0 +1,37 @@
+#second-div {
+    border: 3px solid red;
+    background-color: aqua;
+    color: green;
+}
+
+
+
+.bordered-div {
+    border: 2px solid black;
+}
+
+.background {
+    background-color: burlywood;
+}
+
+div {
+    color: red;
+}
+
+p {
+    color: blue;
+    border: 1px solid black;
+}
+
+.second-div {
+    color: aqua;
+    border: 1px solid black;
+}
+
+
+
+
+#first-div {
+    color: darkolivegreen;
+}
+
