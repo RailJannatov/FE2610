@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1248px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid black;
+}
+
+.col-1 {
+
+  flex: 0 0 calc(100% / 12 * 1);
+   
+
+
+}
+.col-2 {
+  width: calc(100% / 12 * 2);
+}
+
+.col-4 {
+  width: calc(100% / 12 * 4);
+
+  /* padding: 12px; */
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
