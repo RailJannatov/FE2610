@@ -1,0 +1,53 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    font-family: sans-serif;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #1e293b;
+    color: white;
+    padding: 1rem;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 2rem;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin: 1rem 0;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f8fafc;
+    color: green;
+  }
+  
+  .dashboard-header h1 {
+    margin: 0;
+    color: green;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  

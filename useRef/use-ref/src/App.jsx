@@ -1,64 +1,61 @@
+import React, { useContext, useLayoutEffect } from "react";
 import "./App.css";
-import React, { useContext, useState } from "react";
 
-import { UserProvider, UserContext } from "./inputContext";
+import { UserContext } from "./inputContext";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { Home } from "./pages/Home";
+import { ContactUs } from "./pages/ContactUs";
+import { AboutUs } from "./pages/AboutUs";
+import { Layout as CustomLayout } from "./layout/Layout";
+import { ListItem } from "./pages/ListItem";
+import Dashboard from "./layout/Dashboard";
+import { Students } from "./pages/Students";
+
 function App() {
-  const ref = React.useRef(null);
-  const [list, setList] = useState([]);
+  // const ref = React.useRef(null);
+  // const [list, setList] = useState([]);
 
-  console.log("re-render");
+  // console.log("re-render");
 
-  React.useEffect(() => {
-    if (ref.current) {
-      ref.current.focus();
-    }
-  }, []);
+  // React.useEffect(() => {
+  //   if (ref.current) {
+  //     ref.current.focus();
+  //   }
+  // }, []);
 
-  const handleInput = (e) => {
-    ref.current = e.target.value;
-    console.log("reff", ref.current);
-  };
+  // const handleInput = (e) => {
+  //   ref.current = e.target.value;
+  //   console.log("reff", ref.current);
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setList((prev) => [...prev, ref.current]);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setList((prev) => [...prev, ref.current]);
+  // };
 
   return (
-    <UserProvider>
-      {/* <Layout>
-        <form action="" onSubmit={handleSubmit}>
-          <p>use Ref</p>
-          <input type="text" ref={ref} onChange={(e) => handleInput(e)} />
-        </form>
-        {list?.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
-      </Layout> */}
-
-      <Wrapper>
-        <p>version_1</p>
-        <div>
-          <p>title</p>
-          <p>subtitle</p>
-        </div>
-        <div></div>
-      </Wrapper>
-
-     
-
-      <Wrapper>
-        <div>
-          <p>title</p>
-          <p>subtitle</p>
-        </div>
-        <div>
-          <p>version_2</p>
-        </div>
-      </Wrapper>
-    </UserProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<CustomLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/list-item/:id" element={<ListItem />} />
+          <Route path="*" element={<div>404 Not Found</div>} />
+        </Route>
+        <Route path="/dashboard"  element={<Dashboard/>}>
+          <Route index element={<Students/>} />
+          <Route path="students" element={<div>Something students</div>} />
+          <Route path="teacher" element={<div>Teachers</div>} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
+
+
 
 export const Layout = ({ children }) => {
   return (
